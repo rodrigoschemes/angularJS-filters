@@ -1,0 +1,6 @@
+Instalar
+
+
+
+Iniciar aplicação
+- python -m SimpleHTTPServer 8000

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="app">
+	
+	<div data-ng-controller="myController">
+		{{name}}
+		{{20 | currency}}
+		{{value}}
+		{{'Rodrigo' | upper}}
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script>
+		angular
+			.module('app',[])
+			.controller('myController', function($scope,$filter){
+				$scope.name = $filter('upper')('School of Net');
+				$scope.value = $filter('currency')(50);
+			})
+			.filter('upper', function(){
+				return function(value){
+					return value.toUpperCase();
+				}
+			});
+	</script>
+</body>
+</html>
